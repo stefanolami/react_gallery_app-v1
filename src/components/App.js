@@ -14,9 +14,9 @@ function App() {
     <div className="App">
       <Search />
       <Nav />
+      <Gallery />
     </div>
    
-    
   );
 }
 

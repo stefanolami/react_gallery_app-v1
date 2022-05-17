@@ -70,6 +70,7 @@ input {
   justify-content: space-between;
   -ms-align-items: flex-start;
   align-items: flex-start;
+  margin: 50px 180px;
 }
 
 .photo-container ul li {
