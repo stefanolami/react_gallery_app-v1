@@ -6,22 +6,29 @@ import NotFound from './NotFound';
 
 const Gallery = (props) => {
 
-    
     let {query} = useParams();
     
     let queryValue;
 
+    /** 
+     * Checks for a query prop and assigns it to queryValue, otherwise assigns the query URL parameter to queryValue
+     */
     if (props.query) {
         queryValue = props.query;
     } else {
         queryValue = query;
     }
 
+    /** 
+     * Calls handleSearch at every change of queryValue
+     */
     useEffect(() => {
         props.handleSearch(queryValue);
     }, [queryValue]) // eslint-disable-line react-hooks/exhaustive-deps
 
-
+    /** 
+     * Checks for the loading state: shows loading indicator if true, if false checks for photos array length, maps over it if > 0, otherwise shows NotFound component
+     */
     let photosArr;
     if (props.loading) {
         photosArr = <h1 className="loading">Loading...</h1>;
@@ -34,20 +41,14 @@ const Gallery = (props) => {
         }
     }
     
-    
-    
-    /* this.props.handleSearch(this.props.query); */
     return (
         <div className="photo-container">
             <h2>Results for {queryValue}</h2>
             <ul>
-                    {photosArr}
+                {photosArr}
             </ul>
         </div>
     )
-    
-    
-
 }
 
 export default withRouter(Gallery);
