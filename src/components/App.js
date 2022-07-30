@@ -61,7 +61,7 @@ class App extends PureComponent {
 
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <div className="App">
           <Header 
             query={this.state.query}
@@ -72,29 +72,29 @@ class App extends PureComponent {
           />
           <Nav />
           <Routes>
-            <Route path="/cats" element={<Gallery 
+            <Route path="/react_gallery_app-v1/cats" element={<Gallery 
                 photos={this.state.photos}
                 query="cats"
                 handleSearch={this.handleSearch}
                 updateQuery={this.updateQuery}
                 loading={this.state.loading}
               />} />
-              <Route path="/dogs" element={<Gallery 
+              <Route path="/react_gallery_app-v1/dogs" element={<Gallery 
                 photos={this.state.photos}
                 query="dogs"
                 handleSearch={this.handleSearch}
                 updateQuery={this.updateQuery}
                 loading={this.state.loading}
               />} />
-              <Route path="/computers" element={<Gallery 
+              <Route path="/react_gallery_app-v1/computers" element={<Gallery 
                 photos={this.state.photos}
                 query="computers"
                 handleSearch={this.handleSearch}
                 updateQuery={this.updateQuery}
                 loading={this.state.loading}
               />} />
-              <Route path="/" element={<Navigate to="/cats" />} />
-              <Route path="/search/:query" element={<Gallery 
+              <Route path="/react_gallery_app-v1" element={<Navigate to="/react_gallery_app-v1/cats" />} />
+              <Route path="/react_gallery_app-v1/search/:query" element={<Gallery 
                 photos={this.state.photos}
                 handleSearch={this.handleSearch}
                 updateQuery={this.updateQuery}
@@ -103,7 +103,7 @@ class App extends PureComponent {
               <Route path="*" element={<h1 className="error">Error: page not found!</h1>} />
           </Routes>
         </div>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }
