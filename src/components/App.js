@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import {BrowserRouter, Route, Routes, Navigate} from 'react-router-dom';
+import {BrowserRouter, Route, Routes, Navigate, HashRouter} from 'react-router-dom';
 import axios from 'axios';
 
 import '../index.css';
@@ -61,7 +61,7 @@ class App extends PureComponent {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div className="App">
           <Header 
             query={this.state.query}
@@ -103,7 +103,7 @@ class App extends PureComponent {
               <Route path="*" element={<h1 className="error">Error: page not found!</h1>} />
           </Routes>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
