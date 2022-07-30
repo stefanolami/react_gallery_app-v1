@@ -61,7 +61,7 @@ class App extends PureComponent {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div className="App">
           <Header 
             query={this.state.query}
@@ -103,7 +103,7 @@ class App extends PureComponent {
               <Route path="*" element={<h1 className="error">Error: page not found!</h1>} />
           </Routes>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
